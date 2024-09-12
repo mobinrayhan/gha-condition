@@ -5,7 +5,11 @@ on:
       - master
 jobs:
   lint:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        version: [12, 14, 16, 20]
+    runs-on: ${{ matrix.os }}
     steps:
       - name: Get code
         uses: actions/checkout@v3
