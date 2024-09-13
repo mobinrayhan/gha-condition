@@ -3,7 +3,6 @@ on:
   workflow_call:
     inputs:
       files-name:
-        required: true
         default: dist
         type: string
         description: A Reusable Workflows Inputs name
